@@ -2,7 +2,7 @@
 
 This repository contains a PyTorch implementation of "FDGATII : Fast Dynamic Graph Attention with Initial Residual and Identity Mapping".(https://arxiv.org/abs/2110.11464)
 
-The repo has been forked initially from [GCNII](https://github.com/chennnM/GCNII). We use the sparse (static) GATv1 attention code from [pyGAT](https://github.com/Diego999/pyGAT) and modified for dynamic attention as in [GATv2](https://arxiv.org/abs/2105.14491). 
+The repo, inlcuding data and datasplits used for the 10 ierations, has been forked initially from [GCNII](https://github.com/chennnM/GCNII). We use the sparse (static) GATv1 attention code from [pyGAT](https://github.com/Diego999/pyGAT) and modified for dynamic attention as in [GATv2](https://arxiv.org/abs/2105.14491). 
 
 ## Dependencies
 - CUDA 11.3.0
@@ -12,7 +12,7 @@ Note : FDGATII is able to run with no GPU if the GUP timing code is commented ou
 
 ## Datasets
 
-The `data` folder contains three benchmark datasets(Cora, Citeseer, Pubmed), and the `newdata` folder contains four datasets(Chameleon, Cornell, Texas, Wisconsin) from [Geom-GCN](https://github.com/graphdml-uiuc-jlu/geom-gcn). We use the same same full-supervised setting as Geom-GCN and [GCNII](https://github.com/chennnM/GCNII). 
+The `data` folder contains three benchmark datasets(Cora, Citeseer, Pubmed), and the `newdata` folder contains four datasets(Chameleon, Cornell, Texas, Wisconsin) from [Geom-GCN](https://github.com/graphdml-uiuc-jlu/geom-gcn). We use the same same full-supervised setting, and data splits,  as Geom-GCN and GCNII. 
 
 ## Results
 Testing accuracy summarized below.
