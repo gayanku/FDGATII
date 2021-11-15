@@ -29,6 +29,13 @@ Testing accuracy summarized below.
 
 
 ## Usage
+- All parameters are defined in fullSupervised_01.py.
+
+- To run FDGATII on cora, for 1 iteration only use
+```
+python -u fullSupervised_01.py --data cora --layer 2 --alpha 0.2 --weight_decay 1e-4 --epochs 1500 --iterations 1 --mode FDGATII --support 1 --verbosity 1 --model GCNII_BASE
+```
+
 - To replicate the FDGATII full-supervised results, run the following script
 ```sh
 #!/bin/bash
