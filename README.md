@@ -1,4 +1,5 @@
-# Fast Dynamic Graph Attention with Initial Residual and Identity Mapping
+# Fast Dynamic Graph Attention with Initial Residual and Identity Mapping 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository contains a PyTorch implementation of "FDGATII : Fast Dynamic Graph Attention with Initial Residual and Identity Mapping".(https://arxiv.org/abs/2110.11464)
 
@@ -56,6 +57,9 @@ $SCRIPT --data wisconsin --layer 1 --hidden 128 --lamda 1 --weight_decay 5e-4 $S
 done
 ```
 
+## Data sources and code
+Datasets and code is forked from [GCNII](https://github.com/chennnM/GCNII) which uses the data set and parts of code from [Geom-GCN](https://github.com/graphdml-uiuc-jlu/geom-gcn). We use sparse attention implementation code from [pyGAT](https://github.com/Diego999/pyGAT) as discribed in [GAT](https://arxiv.org/abs/1710.10903) . We acknowledge and thank the authors of these works for sharing their code.
+
 ## Citation
 ```
 @article{kulatilleke2021fdgatii,
@@ -65,6 +69,4 @@ done
   year={2021}
 }
 ```
-## Data sources and code
-Datasets and code is forked from [GCNII](https://github.com/chennnM/GCNII) which uses the data set and parts of code from [Geom-GCN](https://github.com/graphdml-uiuc-jlu/geom-gcn). We use sparse attention implementation code from [pyGAT](https://github.com/Diego999/pyGAT) as discribed in [GAT](https://arxiv.org/abs/1710.10903) . We acknowledge and thank the authors of these works for sharing their code.
 
