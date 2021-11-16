@@ -2,20 +2,21 @@
 
 This repository contains a PyTorch implementation of "FDGATII : Fast Dynamic Graph Attention with Initial Residual and Identity Mapping".(https://arxiv.org/abs/2110.11464)
 
-The repo, inlcuding data and datasplits used for the 10 ierations, has been forked initially from [GCNII](https://github.com/chennnM/GCNII). We use the sparse (static) GATv1 attention code from [pyGAT](https://github.com/Diego999/pyGAT) and modified for dynamic attention as in [GATv2](https://arxiv.org/abs/2105.14491). 
+The repo, inlcuding data and datasplits used for the 10 ierations, has been forked initially from [GCNII](https://github.com/chennnM/GCNII). We use the sparse (static) GATv1 attention code from [pyGAT](https://github.com/Diego999/pyGAT) and modified dynamic attention as in [GATv2](https://arxiv.org/abs/2105.14491). 
 
 ## Dependencies
 - CUDA 11.3.0
 - python 3.6.9
 - pytorch 1.3.1
+
 Note : FDGATII is able to run with no GPU if the GUP timing code is commented out, and then will not require CUDA. 
 
 ## Datasets
 
-The `data` folder contains three benchmark datasets(Cora, Citeseer, Pubmed), and the `newdata` folder contains four datasets(Chameleon, Cornell, Texas, Wisconsin) from [Geom-GCN](https://github.com/graphdml-uiuc-jlu/geom-gcn). We use the same same full-supervised setting, and data splits,  as Geom-GCN and GCNII. 
+The `data` folder contains three benchmark datasets(Cora, Citeseer, Pubmed), and the `new_data` folder contains four datasets(Chameleon, Cornell, Texas, Wisconsin) from [Geom-GCN](https://github.com/graphdml-uiuc-jlu/geom-gcn). We use the same same full-supervised setting, and data splits,  as Geom-GCN and GCNII. 
 
 ## Results
-Testing accuracy summarized below. We have used 10 data splits ( Split 0 - 9) and obtained the Avarage Accuracy and Standard deviation.
+Testing accuracy is summarized below. We have used the 10 standard data splits ( Split 0 - 9) and obtained the Avarage Accuracy and Standard deviation.
 | Dataset | Depth |Dimensions|  Accuracy | Std.D |Split 0      | Split 1      | Split 2      | Split 3      | Split 4      | Split 5      | Split 6      | Split 7      | Split 8      | Split 9 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Cora | 2 |64  | 87.7867 | 1.149  | 87.1227 | 89.1348 | 88.7324 | 87.7264 | 87.7264 | 86.3179 | 85.5131 | 89.1348 | 87.7264 | 88.7324 |
@@ -64,3 +65,6 @@ done
   year={2021}
 }
 ```
+## Data sources and code
+Datasets and code is forked from [GCNII](https://github.com/chennnM/GCNII) which uses the data set and parts of code from [Geom-GCN](https://github.com/graphdml-uiuc-jlu/geom-gcn). We use sparse attention implementation code from [pyGAT](https://github.com/Diego999/pyGAT) as discribed in [GAT](https://arxiv.org/abs/1710.10903) . We acknowledge and thank the authors of these works for sharing their code.
+
