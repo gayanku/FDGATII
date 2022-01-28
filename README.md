@@ -25,7 +25,7 @@ Testing accuracy is summarized below. We have used the 10 standard data splits (
 | Pubm | 2 |64  | 90.3524 | 0.297  | 90.5426 | 90.644  | 90.213  | 89.858  | 90.5426 | 90.8215 | 90.4412 | 90.2383 | 89.8834 | 90.3398 |
 | Cham | 1 |64  | 65.1754 | 1.8105 | 67.1053 | 66.2281 | 61.4035 | 63.5965 | 65.5702 | 64.4737 | 64.2544 | 64.693  | 67.9825 | 66.4474 |
 | Corn | 1 |128 | 82.4324 | 6.3095 | 67.5676 | 83.7838 | 91.8919 | 86.4865 | 86.4865 | 83.7838 | 83.7838 | 83.7838 | 75.6757 | 81.0811 |
-| Texa | 2 |64  | 80.5405 | 5.2407 | 75.6757 | 81.0811 | 81.0811 | 91.8919 | 75.6757 | 81.0811 | 78.3784 | 72.973  | 81.0811 | 86.4865 |
+| Texa | 2 |64  | 82.1622 | 2.7562 | 81.0811 | 83.7838 | 81.0811 | 86.4865 | 81.0811 | 78.3784 | 83.7838 | 81.0811 | 78.3784 | 86.4865 |
 | Wisc | 1 |128 | 86.2745 | 4.4713 | 86.2745 | 80.3922 | 88.2353 | 92.1569 | 90.1961 | 82.3529 | 82.3529 | 84.3137 | 82.3529 | 94.1176 |
 
 
@@ -41,20 +41,16 @@ python -u fullSupervised_01.py --data cora --layer 2 --alpha 0.2 --weight_decay 
 ```sh
 #!/bin/bash
 SCRIPT='python3.6 fullSupervised_01.py'
-for SUPPORT in 1 2
-do
+SETTTINGS=" --epochs 1500 --iterations 10 --mode FDGATII --verbosity 0 --model GCNII_BASE "
 
-SETTTINGS=" --epochs 1500 --iterations 10 --mode FDGATII --support $SUPPORT --verbosity 0 --model GCNII_BASE "
+$SCRIPT --data cora --support 1 --layer 2 --hidden 64 --alpha 0.2 --weight_decay 1e-4 $SETTTINGS
+$SCRIPT --data citeseer --support 2 --layer 1 --hidden 128  --weight_decay 5e-6 $SETTTINGS
+$SCRIPT --data pubmed --support 1 --layer 2 --hidden 64  --alpha 0.1 --weight_decay 5e-6 $SETTTINGS
+$SCRIPT --data chameleon --support 0 --layer 1 --hidden 64 --lamda 1.5 --alpha 0.2 --weight_decay 5e-4 $SETTTINGS
+$SCRIPT --data cornell --support 2 --layer 1 --hidden  128 --lamda 1 --weight_decay 1e-3 $SETTTINGS
+$SCRIPT --data texas --support 2 --layer 2 --hidden 64 --lamda 1.5 --weight_decay 1e-4 $SETTTINGS
+$SCRIPT --data wisconsin --support 2 --layer 1 --hidden 128 --lamda 1 --weight_decay 5e-4 $SETTTINGS
 
-$SCRIPT --data cora --layer 2 --hidden 64 --alpha 0.2 --weight_decay 1e-4 $SETTTINGS
-$SCRIPT --data citeseer --layer 1 --hidden 128  --weight_decay 5e-6 $SETTTINGS
-$SCRIPT --data pubmed --layer 2 --hidden 64  --alpha 0.1 --weight_decay 5e-6 $SETTTINGS
-$SCRIPT --data chameleon --layer 1 --hidden 64 --lamda 1.5 --alpha 0.2 --weight_decay 5e-4 $SETTTINGS
-$SCRIPT --data cornell --layer 1 --hidden  128 --lamda 1 --weight_decay 1e-3 $SETTTINGS
-$SCRIPT --data texas --layer 2 --hidden 64 --lamda 1.5 --weight_decay 1e-4 $SETTTINGS
-$SCRIPT --data wisconsin --layer 1 --hidden 128 --lamda 1 --weight_decay 5e-4 $SETTTINGS
-
-done
 ```
 
 ## Data sources and code
