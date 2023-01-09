@@ -3,6 +3,9 @@
 
 This repository contains a PyTorch implementation of "FDGATII : Fast Dynamic Graph Attention with Initial Residual and Identity Mapping".(https://arxiv.org/abs/2110.11464)
 
+FDGATII combines 3 main enhancements on GAT, namely a default (safety net) initial representation is provided that is used when no similar class or node is present in the neighbourhood, so that graph attention mechanism will not fail. A more expressive universal dynamic attention is used. Finally, string regularization is applied, controlled by the hyperparameter β.
+![FDGATII concepts](https://github.com/gayanku/FDGATII/blob/main/images/FDGATII_intutionSummary.png?raw=true)
+
 The repo, inlcuding data and datasplits used for the 10 ierations, has been forked initially from [GCNII](https://github.com/chennnM/GCNII). We use the sparse (static) GATv1 attention code from [pyGAT](https://github.com/Diego999/pyGAT) and modified dynamic attention as in [GATv2](https://arxiv.org/abs/2105.14491). 
 
 ## Dependencies
